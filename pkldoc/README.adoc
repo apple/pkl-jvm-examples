@@ -1,0 +1,51 @@
+= Documentation Generator Example
+
+Demonstrates how to generate documentation for Pkl modules.
+
+To run this example, type `../gradlew build` (requires JDK 11 or higher).
+
+== Walkthrough
+
+Let's generate documentation for module xref:Bird.pkl[].
+
+Each documented module belongs to a _package_ described by a _doc-package-info.pkl_ file:
+
+.doc-package-info.pkl
+[source,groovy]
+// can't use include here (https://github.com/github/markup/issues/1095)
+----
+/// Animals are living creatures inhabiting the planet Earth.
+amends "pkl:DocPackageInfo"
+
+name = "animal"
+version = "1.2.3"
+importUri = "modulepath:/animals/"
+authors {
+  "zoologist@example.com"
+}
+sourceCode = "https://www.example.com/my/source"
+issueTracker = "https://www.example.com/my/issues"
+----
+
+For more information on _doc-package-info.pkl_,
+see the https://pkl-lang.org/package-docs/pkl/current/DocPackageInfo/[pkl.DocPackageInfo] standard library module.
+
+Run the documentation generator:
+
+[source,shell script]
+----
+$ java -cp <classpath-for-pkl-doc> \
+    -jar pkl-doc.jar \
+    -o build/pkldoc/pkldoc \
+    Flintstones.pkl doc-package-info.pkl
+----
+
+NOTE: xref:build.gradle.kts[] demonstrates how to generate documentation with the Gradle plugin.
+
+Open `build/pkldoc/pkldoc/index.html` to browse the generated documentation.
+
+== Further Resources
+
+* https://pkl-lang.org/package-docs/pkl/current/PackageInfo/[pkl.PackageInfo] standard library module
+* https://pkl-lang.org/main/current/pkl-doc/[Pkldoc documentation]
+* https://pkl-lang.org/main/current/pkl-gradle/[Gradle plugin documentation]

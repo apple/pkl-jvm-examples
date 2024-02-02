@@ -1,0 +1,93 @@
+= Kotlin Code Generator Example
+
+Demonstrates how to use the Kotlin code generator and consume configuration as statically typed Kotlin objects.
+
+To run this example, type `../gradlew build` (requires JDK 11 or higher).
+
+== Walkthrough
+
+Let's generate Kotlin classes for Pkl module xref:src/main/resources/Flintstones.pkl.
+
+Run the Kotlin code generator:
+
+[source,shell script]
+----
+$ java -cp <classpath-for-pkl-codegen-kotlin> \
+    -jar pkl-codegen-kotlin.jar \
+    -o generated \
+    src/main/resources/Flintstones.pkl
+----
+
+NOTE: xref:build.gradle.kts[] demonstrates how to generate code with the Gradle plugin.
+
+The following code is generated:
+
+.generated/example/Flintstones.kt
+[source,kotlin]
+----
+
+data class Birds(
+  /**
+   * The birds that we know about.
+   */
+  val birds: Map<String, Bird>
+) {
+  data class Bird(
+    /**
+     * The name of the bird
+     */
+    val name: String,
+    /**
+     * The bird's features
+     */
+    val features: Features
+  )
+
+  data class Features(
+    /**
+     * Can this bird mimick other sounds?
+     */
+    val voiceMimickry: Boolean,
+    /**
+     * Can this bird fly?
+     */
+    val flies: Boolean,
+    /**
+     * Can this bird swim?
+     */
+    val swims: Boolean
+  )
+}
+----
+
+For Pkl classes that aren't `open` for extension and don't extend a superclass, Kotlin _data classes_ are generated.
+For the remaining classes, regular Kotlin classes with component-wise implementations of `equals()`/`hashCode()`/`toString()` and a `copy()` method are generated.
+
+We are now ready to consume Pkl config as statically typed Kotlin objects:
+
+[source,kotlin]
+----
+val evaluator = ConfigEvaluator.preconfigured().forKotlin()
+val config = evaluator.evaluate(ModuleSource.modulePath("config.pkl"))
+val birds = config.to<Birds>()
+----
+
+For the full source code, see xref:src/main/kotlin/example/KotlinCodeGenExample.kt[].
+
+[NOTE]
+====
+We have omitted some details here,
+such as how to compile the generated Kotlin classes,
+and how to make them known to the IDE.
+The Gradle plugin automatically takes care of these details.
+
+This example reads Pkl files from the class path.
+To read Pkl files from the local file system,
+replace `evaluator.evaluate(ModuleSource.modulePath("config.pkl"))`
+with `evaluator.evaluate(ModuleSource.path("path/to/config.pkl"))`.
+====
+
+== Further Resources
+
+* https://pkl-lang.org/main/current/pkl-codegen-kotlin/[pkl-codegen-kotlin documentation]
+* https://pkl-lang.org/main/current/pkl-gradle/[Gradle plugin documentation]

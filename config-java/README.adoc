@@ -1,0 +1,11 @@
+= Java Configuration Example
+
+Demonstrates how to consume Pkl configuration with the _pkl-config-java_ library.
+
+To run this example, type `../gradlew build` (requires JDK 11 or higher).
+
+TIP:: See the xref:../codegen-java/README.adoc[codegen-java] example for how to get the most out of this library by generating config classes.
+
+== Further Resources
+
+* https://pkl-lang.org/main/current/pkl-config-java/[pkl-config-java documentation]

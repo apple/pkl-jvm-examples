@@ -1,0 +1,14 @@
+= Core Library Example
+
+Demonstrates how to evaluate Pkl modules with the _pkl-core_ Java library.
+
+_pkl-core_ is a low-level library.
+For a more convenient way to consume Pkl configuration,
+see xref:../config-java/README.adoc[Java Configuration Example]
+and xref:../config-kotlin/README.adoc[Kotlin Configuration Example].
+
+To run this example, type `../gradlew build` (requires JDK 11 or higher).
+
+== Further Resources
+
+* https://pkl-lang.org/main/current/pkl-core/[pkl-core documentation]

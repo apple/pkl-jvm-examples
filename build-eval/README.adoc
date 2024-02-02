@@ -1,0 +1,9 @@
+= Build-time Evaluation Example
+
+Demonstrates how to evaluate Pkl code at build time.
+
+To run this example, type `../gradlew build` (requires JDK 11 or higher).
+
+== Further Resources
+
+* https://pkl-lang.org/main/current/pkl-gradle/[Gradle plugin documentation]

@@ -1,0 +1,125 @@
+= Java Code Generator Example
+
+Demonstrates how to use the Java code generator and consume configuration as statically typed Java objects.
+
+To run this example, type `../gradlew build` (requires JDK 11 or higher).
+
+== Walkthrough
+
+Let's generate Java classes for Pkl module xref:src/main/resources/Birds.pkl[].
+
+Run the Java code generator:
+
+[source,shell script]
+----
+$ java -cp <classpath-for-pkl-codegen-java> \
+    -jar pkl-codegen-java.jar \
+    -o generated \
+    src/main/resources/Birds.pkl
+----
+
+NOTE: xref:build.gradle.kts[] demonstrates how to generate code with the Gradle plugin.
+
+The following Java code is generated:
+
+.generated/example/Birds.java
+[source,java]
+----
+package example;
+
+import org.pkl.config.java.mapper.Named;
+import org.pkl.config.java.mapper.NonNull;
+
+public final class Birds {
+  /**
+   * The birds that we know about.
+   */
+  public final @NonNull Map<@NonNull String, @NonNull Bird> birds;
+
+  public Birds(@Named("birds") @NonNull Map<@NonNull String, @NonNull Bird> birds) {
+    this.birds = birds;
+  }
+
+  public static final class Bird {
+    /**
+     * The name of the bird
+     */
+    public final @NonNull String name;
+
+    /**
+     * The bird's features
+     */
+    public final @NonNull Features features;
+
+    public Bird(@Named("name") @NonNull String name,
+        @Named("features") @NonNull Features features) {
+      this.name = name;
+      this.features = features;
+    }
+  }
+
+  public static final class Features {
+    /**
+     * Can this bird mimick other sounds?
+     */
+    public final boolean voiceMimickry;
+
+    /**
+     * Can this bird fly?
+     */
+    public final boolean flies;
+
+    /**
+     * Can this bird swim?
+     */
+    public final boolean swims;
+
+    public Features(@Named("voiceMimickry") boolean voiceMimickry, @Named("flies") boolean flies,
+        @Named("swims") boolean swims) {
+      this.voiceMimickry = voiceMimickry;
+      this.flies = flies;
+      this.swims = swims;
+    }
+  }
+}
+----
+
+For brevity, some parts of the generated classes aren't shown here:
+* component-wise implementations of `equals()`, `hashCode()`, and `toString()`
+* `with` methods, the immutable equivalent of setter methods
+
+To generate getter methods instead of public final fields, use `--generate-getters=true`.
+
+We are now ready to consume Pkl configuration as statically typed Java objects:
+
+[source,java]
+----
+var evaluator = ConfigEvaluator.preconfigured();
+var config = evaluator.evaluate(ModuleSource.modulePath("config.pkl"));
+var birds = config.as(Birds.class);
+----
+
+For the full source code, see xref:src/main/java/example/JavaCodeGenExample.java[].
+
+[NOTE]
+====
+We have omitted some details here,
+such as how to compile the generated Java classes,
+and how to make them known to the IDE.
+The Gradle plugin automatically takes care of these details.
+
+This example reads Pkl files from the class path.
+To read Pkl files from the local file system,
+replace `evaluator.evaluate(ModuleSource.modulePath("config.pkl"))`
+with `evaluator.evaluate(ModuleSource.path("path/to/config.pkl"))`.
+====
+
+== Tests
+
+This project's Gradle configuration also evaluates the `config.pkl` file as part of the `check` task.
+This helps ensure that Pkl files are valid as part of a project's test.
+
+== Further Resources
+
+* https://pkl-lang.org/main/current/pkl-codegen-java/[pkl-codegen-java documentation]
+* https://pkl-lang.org/main/current/pkl-gradle/[Gradle plugin documentation]
