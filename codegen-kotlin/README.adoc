@@ -72,7 +72,7 @@ val config = evaluator.evaluate(ModuleSource.modulePath("config.pkl"))
 val birds = config.to<Birds>()
 ----
 
-For the full source code, see xref:src/main/kotlin/example/KotlinCodeGenExample.kt[].
+For the full source code, see xref:src/main/kotlin/example/KotlinCodeGeneratorExample.kt[].
 
 [NOTE]
 ====
