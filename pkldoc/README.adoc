@@ -37,7 +37,7 @@ Run the documentation generator:
 $ java -cp <classpath-for-pkl-doc> \
     -jar pkl-doc.jar \
     -o build/pkldoc/pkldoc \
-    Flintstones.pkl doc-package-info.pkl
+    Bird.pkl doc-package-info.pkl
 ----
 
 NOTE: xref:build.gradle.kts[] demonstrates how to generate documentation with the Gradle plugin.

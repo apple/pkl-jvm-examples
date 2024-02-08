@@ -6,7 +6,7 @@ To run this example, type `../gradlew build` (requires JDK 11 or higher).
 
 == Walkthrough
 
-Let's generate Kotlin classes for Pkl module xref:src/main/resources/Flintstones.pkl.
+Let's generate Kotlin classes for Pkl module xref:src/main/resources/Birds.pkl.
 
 Run the Kotlin code generator:
 
@@ -15,14 +15,14 @@ Run the Kotlin code generator:
 $ java -cp <classpath-for-pkl-codegen-kotlin> \
     -jar pkl-codegen-kotlin.jar \
     -o generated \
-    src/main/resources/Flintstones.pkl
+    src/main/resources/Birds.pkl
 ----
 
 NOTE: xref:build.gradle.kts[] demonstrates how to generate code with the Gradle plugin.
 
 The following code is generated:
 
-.generated/example/Flintstones.kt
+.generated/example/Birds.kt
 [source,kotlin]
 ----
 
