@@ -8,4 +8,4 @@ TIP:: See the xref:../codegen-kotlin/README.adoc[codegen-kotlin] example for how
 
 == Further Resources
 
-* https://pkl-lang.org/main/current/pkl-config-kotlin/[pkl-config-kotlin documentation]
+* https://pkl-lang.org/main/current/kotlin-binding/pkl-config-kotlin[pkl-config-kotlin documentation]
