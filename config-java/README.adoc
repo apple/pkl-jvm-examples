@@ -8,4 +8,4 @@ TIP:: See the xref:../codegen-java/README.adoc[codegen-java] example for how to 
 
 == Further Resources
 
-* https://pkl-lang.org/main/current/pkl-config-java/[pkl-config-java documentation]
+* https://pkl-lang.org/main/current/java-binding/pkl-config-java[pkl-config-java documentation]

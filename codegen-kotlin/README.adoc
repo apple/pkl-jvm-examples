@@ -89,5 +89,5 @@ with `evaluator.evaluate(ModuleSource.path("path/to/config.pkl"))`.
 
 == Further Resources
 
-* https://pkl-lang.org/main/current/pkl-codegen-kotlin/[pkl-codegen-kotlin documentation]
+* https://pkl-lang.org/main/current/kotlin-binding/codegen[pkl-codegen-kotlin documentation]
 * https://pkl-lang.org/main/current/pkl-gradle/[Gradle plugin documentation]

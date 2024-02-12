@@ -121,5 +121,5 @@ This helps ensure that Pkl files are valid as part of a project's test.
 
 == Further Resources
 
-* https://pkl-lang.org/main/current/pkl-codegen-java/[pkl-codegen-java documentation]
+* https://pkl-lang.org/main/current/java-binding/codegen[pkl-codegen-java documentation]
 * https://pkl-lang.org/main/current/pkl-gradle/[Gradle plugin documentation]
