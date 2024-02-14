@@ -16,7 +16,7 @@
 amends "Birds.pkl"
 
 birds {
-  ["Pengion"] {
+  ["Penguin"] {
     name = "Penguin"
     features {
       flies = false
