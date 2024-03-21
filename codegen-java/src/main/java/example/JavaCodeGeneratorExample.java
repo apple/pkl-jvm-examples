@@ -29,7 +29,8 @@ public class JavaCodeGeneratorExample {
     try(var evaluator = ConfigEvaluator.preconfigured()) {
       // "Module path" here represents Java's classpath. Since we put `config.pkl` inside the resources directory, it
       // is available in the classpath.
-      config = evaluator.evaluate(ModuleSource.modulePath("/config.pkl"));
+      config = evaluator.evaluate(ModuleSource.modulePath("/post_checkout_upsell_template.pkl"));
+//      config = evaluator.evaluate(ModuleSource.modulePath("/config.pkl"));
     }
 
     // Convert entire config to an instance of the generated config class.

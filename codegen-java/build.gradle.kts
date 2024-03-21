@@ -30,8 +30,8 @@ dependencies {
 // to the build output directory, which is typically excluded by IDEs.
 pkl {
   javaCodeGenerators {
-    register("configClasses") {
-      sourceModules.set(files("src/main/resources/Birds.pkl"))
+    register("genJava") {
+      sourceModules.addAll(files("src/main/resources/Birds.pkl", "src/main/resources/upsell.pkl"))
       generateJavadoc.set(true)
     }
   }
@@ -41,8 +41,8 @@ pkl {
     //
     // This task is registered as a dependency to `check`, so that Pkl modules are checked for
     // correctness as part of a project's tests.
-    register("testPklConfig") {
-      sourceModules.set(files("src/main/resources/config.pkl"))
+    register("mosaicTemplate") {
+      sourceModules.addAll(files("src/main/resources/config.pkl", "src/main/resources/post_checkout_upsell_template.pkl"))
       modulePath.from(sourceSets.main.get().runtimeClasspath)
       outputFile.set(file("${layout.buildDirectory.get()}/tesetPklConfig/config"))
     }
@@ -50,7 +50,7 @@ pkl {
 }
 
 tasks.check {
-  dependsOn(tasks.named("testPklConfig"))
+  dependsOn(tasks.named("mosaicTemplate"))
 }
 
 // Runs this example.
