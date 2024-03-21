@@ -1,0 +1,34 @@
+@ModuleInfo { minPklVersion = "0.25.1" }
+module post_checkout_upsell_template
+
+template_id = "post_checkout_upsell"
+template_content {
+  body {
+    ["common.prism.text"] {
+      value = "Get a {{refundAmount}} credit with this order with DashPass for user {{userName}}"
+      typography {
+        value = "USAGE_TYPE_DISPLAY_MEDIUM"
+      }
+      color {
+        value = "USAGE_COLOR_TEXT_DEFAULT"
+      }
+      alignment = "TEXT_ALIGNMENT_LEADING"
+    }
+    ["common.prism.banner"] {
+      type = "BANNER_TYPE_WARNING"
+      style = "BANNER_STYLE_SUBDUED"
+      isFullWidth = false
+      actionPosition = "BANNER_ACTION_POSITION_TRAILING_UNSPECIFIED"
+      leadingIcon {
+        tint {
+          value = "USAGE_COLOR_ACTION_SECONDARY_DEFAULT"
+        }
+        size = "ICON_SIZE_24PX"
+        name = "leading icon in banner"
+      }
+      label = "test Prism banner"
+      description = "test Prism banner message"
+      hasCloseButton = true
+    }
+  }
+}
