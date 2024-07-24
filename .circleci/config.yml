@@ -20,7 +20,6 @@ workflows:
     - build:
         requires:
         - hold
-        - pr-approval/authenticate
     when:
       matches:
         value: << pipeline.git.branch >>
