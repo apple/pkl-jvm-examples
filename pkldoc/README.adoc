@@ -2,7 +2,7 @@
 
 Demonstrates how to generate documentation for Pkl modules.
 
-To run this example, type `../gradlew build` (requires JDK 11 or higher).
+To run this example, type `../gradlew build` (requires JDK 17 or higher).
 
 == Walkthrough
 

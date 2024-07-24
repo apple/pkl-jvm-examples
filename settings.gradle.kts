@@ -16,6 +16,6 @@ pluginManagement {
 }
 
 val javaVersion = JavaVersion.current()
-require(javaVersion.isJava11Compatible) {
-  "Project requires Java 11 or higher, but found ${javaVersion.majorVersion}."
+require(javaVersion.isCompatibleWith(JavaVersion.VERSION_17)) {
+  "Project requires Java 17 or higher, but found ${javaVersion.majorVersion}."
 }

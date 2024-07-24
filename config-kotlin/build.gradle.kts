@@ -7,7 +7,7 @@ plugins {
 
 tasks.withType<KotlinCompile>().configureEach {
   kotlinOptions {
-    jvmTarget = "11"
+    jvmTarget = "17"
   }
 }
 
@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10")
-  implementation("org.pkl-lang:pkl-config-kotlin:0.25.1")
+  implementation("org.pkl-lang:pkl-config-kotlin:0.26.2")
 }
 
 // Runs this example.

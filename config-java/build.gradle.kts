@@ -4,7 +4,7 @@ plugins {
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_11
+  sourceCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.pkl-lang:pkl-config-java-all:0.25.1")
+  implementation("org.pkl-lang:pkl-config-java-all:0.26.2")
 }
 
 // Runs this example.
