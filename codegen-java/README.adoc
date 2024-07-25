@@ -2,7 +2,7 @@
 
 Demonstrates how to use the Java code generator and consume configuration as statically typed Java objects.
 
-To run this example, type `../gradlew build` (requires JDK 11 or higher).
+To run this example, type `../gradlew build` (requires JDK 17 or higher).
 
 == Walkthrough
 

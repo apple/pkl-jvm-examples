@@ -7,7 +7,7 @@ For a more convenient way to consume Pkl configuration,
 see xref:../config-java/README.adoc[Java Configuration Example]
 and xref:../config-kotlin/README.adoc[Kotlin Configuration Example].
 
-To run this example, type `../gradlew build` (requires JDK 11 or higher).
+To run this example, type `../gradlew build` (requires JDK 17 or higher).
 
 == Further Resources
 

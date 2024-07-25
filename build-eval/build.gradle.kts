@@ -1,6 +1,6 @@
 plugins {
   // apply the Pkl plugin
-  id("org.pkl-lang") version("0.25.1")
+  id("org.pkl-lang") version("0.26.2")
   base
 }
 
