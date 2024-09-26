@@ -99,7 +99,7 @@ var config = evaluator.evaluate(ModuleSource.modulePath("config.pkl"));
 var birds = config.as(Birds.class);
 ----
 
-For the full source code, see xref:src/main/java/example/JavaCodeGenExample.java[].
+For the full source code, see xref:src/main/java/example/JavaCodeGeneratorExample.java[].
 
 [NOTE]
 ====
