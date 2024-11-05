@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   // apply the Pkl plugin
-  id("org.pkl-lang") version("0.26.2")
+  id("org.pkl-lang") version("0.27.0")
   // if the `idea` plugin is applied, the Pkl plugin makes generated code visible to IntelliJ IDEA
   idea
   `java-library`
@@ -21,7 +21,7 @@ tasks.withType<KotlinCompile>().configureEach {
 
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10")
-  implementation("org.pkl-lang:pkl-config-kotlin:0.26.2")
+  implementation("org.pkl-lang:pkl-config-kotlin:0.27.0")
 }
 
 // Register a code generator named "configClasses".
