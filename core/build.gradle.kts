@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.pkl-lang:pkl-core:0.26.2")
+  implementation("org.pkl-lang:pkl-core:0.27.0")
 }
 
 // Runs this example.

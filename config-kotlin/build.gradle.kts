@@ -17,7 +17,7 @@ repositories {
 
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10")
-  implementation("org.pkl-lang:pkl-config-kotlin:0.26.2")
+  implementation("org.pkl-lang:pkl-config-kotlin:0.27.0")
 }
 
 // Runs this example.
