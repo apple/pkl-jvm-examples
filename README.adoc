@@ -15,6 +15,6 @@ Ready-to-go examples for Pkl's JVM libraries, JVM code generators, and other too
 ** xref:pkldoc/README.adoc[Documentation Generator Example]
 ** xref:build-eval/README.adoc[Build-time Evaluation Example]
 
-To run all examples, type `./gradlew build` (requires JDK 17 or higher).
+To run all examples, type `./gradlew build` (requires JDK 17 or higiher).
 
 To open this project in IntelliJ IDEA, go to File->Open and choose _settings.gradle.kts_.
