@@ -1,6 +1,6 @@
 plugins {
   idea
-  kotlin("jvm") version ("1.6.10") apply (false)
+  kotlin("jvm") version ("2.1.10") apply (false)
   id("com.diffplug.spotless") version ("6.23.3")
 }
 

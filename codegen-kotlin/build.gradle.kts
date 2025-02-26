@@ -1,8 +1,10 @@
+import org.gradle.kotlin.dsl.support.kotlinCompilerOptions
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   // apply the Pkl plugin
-  id("org.pkl-lang") version("0.27.0")
+  id("org.pkl-lang") version("0.28.0")
   // if the `idea` plugin is applied, the Pkl plugin makes generated code visible to IntelliJ IDEA
   idea
   `java-library`
@@ -13,15 +15,20 @@ repositories {
   mavenCentral()
 }
 
-tasks.withType<KotlinCompile>().configureEach {
-  kotlinOptions {
-    jvmTarget = "17"
+tasks.withType<JavaCompile>().configureEach {
+  sourceCompatibility = "17"
+  targetCompatibility = "17"
+}
+
+kotlin {
+  compilerOptions {
+    jvmTarget = JvmTarget.JVM_21
   }
 }
 
 dependencies {
-  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10")
-  implementation("org.pkl-lang:pkl-config-kotlin:0.27.0")
+  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
+  implementation("org.pkl-lang:pkl-config-kotlin:0.28.0")
 }
 
 // Register a code generator named "configClasses".
