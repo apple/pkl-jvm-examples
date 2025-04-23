@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -6,18 +7,24 @@ plugins {
 }
 
 tasks.withType<KotlinCompile>().configureEach {
-  kotlinOptions {
-    jvmTarget = "17"
+  compilerOptions {
+    jvmTarget = JvmTarget.JVM_17
   }
 }
+
+tasks.withType<JavaCompile>().configureEach {
+  sourceCompatibility = "17"
+  targetCompatibility = "17"
+}
+
 
 repositories {
   mavenCentral()
 }
 
 dependencies {
-  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10")
-  implementation("org.pkl-lang:pkl-config-kotlin:0.27.0")
+  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
+  implementation("org.pkl-lang:pkl-config-kotlin:0.28.2")
 }
 
 // Runs this example.
