@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-  implementation("org.pkl-lang:pkl-config-java-all:0.29.0")
+  implementation("org.pkl-lang:pkl-config-java-all:0.30.0")
 }
 
 // Runs this example.
