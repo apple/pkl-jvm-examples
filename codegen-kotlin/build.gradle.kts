@@ -29,6 +29,7 @@ kotlin {
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
   implementation("org.pkl-lang:pkl-config-kotlin:0.30.0")
+  implementation("org.pkl-lang:pkl-config-java-all:0.30.0")
 }
 
 // Register a code generator named "configClasses".
