@@ -1,0 +1,34 @@
+amends "@pkl.impl.ghactions/PklCI.pkl"
+
+import "@gha/actions/Common.pkl"
+import "@gha/Workflow.pkl"
+
+build = baseWorkflow
+
+prb = baseWorkflow
+
+main = baseWorkflow
+
+local baseWorkflow: Workflow = new {
+  jobs {
+    ["build-and-test"] {
+      name = "Build and test"
+      `runs-on` = "ubuntu-latest"
+      steps {
+        new Common.Checkout {}
+        new {
+          name = "Setup Java"
+          uses = "actions/setup-java@v5"
+          with {
+            ["distribution"] = "temurin"
+            ["java-version"] = "17.0.17"
+          }
+        }
+        new {
+          name = "Build and test"
+          run = "./gradlew build"
+        }
+      }
+    }
+  }
+}
