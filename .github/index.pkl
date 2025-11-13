@@ -15,7 +15,11 @@ local baseWorkflow: Workflow = new {
       name = "Build and test"
       `runs-on` = "ubuntu-latest"
       steps {
-        new Common.Checkout {}
+        new Common.Checkout {
+          with {
+            `fetch-depth` = 0
+          }
+        }
         new {
           name = "Setup Java"
           uses = "actions/setup-java@v5"
