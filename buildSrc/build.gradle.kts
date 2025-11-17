@@ -11,23 +11,9 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-plugins {
-  idea
-  `java-library`
+plugins { `kotlin-dsl` }
+
+dependencies {
+  implementation("com.diffplug.spotless:spotless-plugin-gradle:6.25.0")
+  implementation("org.pkl-lang:pkl-formatter:0.30.0")
 }
-
-java { sourceCompatibility = JavaVersion.VERSION_17 }
-
-repositories { mavenCentral() }
-
-dependencies { implementation("org.pkl-lang:pkl-config-java-all:0.30.0") }
-
-// Runs this example.
-// This task is specific to this project and not generally required.
-val runExample by
-  tasks.registering(JavaExec::class) {
-    mainClass.set("example.JavaConfigExample")
-    classpath = sourceSets.main.get().runtimeClasspath
-  }
-
-tasks.check { dependsOn(runExample) }
