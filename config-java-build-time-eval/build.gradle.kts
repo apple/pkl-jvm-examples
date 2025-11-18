@@ -12,6 +12,8 @@
  * the License.
  */
 plugins {
+  // apply the Pkl plugin
+  id("org.pkl-lang") version ("0.30.0")
   idea
   `java-library`
 }
@@ -22,11 +24,28 @@ repositories { mavenCentral() }
 
 dependencies { implementation("org.pkl-lang:pkl-config-java-all:0.30.0") }
 
+// Generate a resource named "data.msgpack" by evaluating data.pkl
+pkl {
+  evaluators {
+    register("configData") {
+      sourceModules.set(files("config.pkl"))
+      outputFormat.set("pkl-binary")
+      outputFile.set(file("build/generated/pkl-binary/example/data.msgpack"))
+    }
+  }
+}
+
+// Ensure the data.msgpack is built when compiling
+tasks.processResources { dependsOn("configData") }
+
+// Ensure data.msgpack is included as a resource
+sourceSets { main { resources { srcDir("build/generated/pkl-binary") } } }
+
 // Runs this example.
 // This task is specific to this project and not generally required.
 val runExample by
   tasks.registering(JavaExec::class) {
-    mainClass.set("example.JavaConfigExample")
+    mainClass.set("example.JavaConfigBuildTimeEvalExample")
     classpath = sourceSets.main.get().runtimeClasspath
   }
 

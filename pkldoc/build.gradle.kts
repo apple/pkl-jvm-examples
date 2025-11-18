@@ -1,20 +1,30 @@
+/**
+ * Copyright © 2025 Apple Inc. and the Pkl project authors. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
 plugins {
   // apply the Pkl plugin
-  id("org.pkl-lang") version("0.30.0")
+  id("org.pkl-lang") version ("0.30.0")
   base
 }
 
 // Register a documentation generator named "pkldoc".
 // This adds a task with the same name.
-// By default, generated documentation is written to `outputDir` "${layout.buildDirectory}/pkldoc/$generatorName".
+// By default, generated documentation is written to `outputDir`
+// "${layout.buildDirectory}/pkldoc/$generatorName".
 pkl {
   pkldocGenerators {
-    register("pkldoc") {
-      sourceModules.set(files("Bird.pkl", "doc-package-info.pkl"))
-    }
+    register("pkldoc") { sourceModules.set(files("Bird.pkl", "doc-package-info.pkl")) }
   }
 }
 
-tasks.check {
-  dependsOn("pkldoc")
-}
+tasks.check { dependsOn("pkldoc") }
