@@ -12,3 +12,6 @@ out/
 *.iml
 *.ipr
 *.iws
+
+# Pkl
+.pkl-lsp/
