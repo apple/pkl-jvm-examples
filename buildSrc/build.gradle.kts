@@ -1,5 +1,5 @@
 /**
- * Copyright © 2025 Apple Inc. and the Pkl project authors. All rights reserved.
+ * Copyright © 2025-2026 Apple Inc. and the Pkl project authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -15,5 +15,5 @@ plugins { `kotlin-dsl` }
 
 dependencies {
   implementation("com.diffplug.spotless:spotless-plugin-gradle:6.25.0")
-  implementation("org.pkl-lang:pkl-formatter:0.30.0")
+  implementation("org.pkl-lang:pkl-formatter:0.31.0")
 }

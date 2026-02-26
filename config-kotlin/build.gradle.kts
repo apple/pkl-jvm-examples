@@ -1,5 +1,5 @@
 /**
- * Copyright © 2025 Apple Inc. and the Pkl project authors. All rights reserved.
+ * Copyright © 2025-2026 Apple Inc. and the Pkl project authors. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -30,8 +30,8 @@ repositories { mavenCentral() }
 
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
-  implementation("org.pkl-lang:pkl-config-kotlin:0.30.0")
-  implementation("org.pkl-lang:pkl-config-java-all:0.30.0")
+  implementation("org.pkl-lang:pkl-config-kotlin:0.31.0")
+  implementation("org.pkl-lang:pkl-config-java-all:0.31.0")
 }
 
 // Runs this example.
