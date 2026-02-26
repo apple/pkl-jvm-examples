@@ -1,22 +1,29 @@
+/**
+ * Copyright © 2026 Apple Inc. and the Pkl project authors. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ */
 plugins {
   // apply the Pkl plugin
-  id("org.pkl-lang") version("0.30.0")
+  id("org.pkl-lang") version ("0.31.0")
   // if the `idea` plugin is applied, the Pkl plugin makes generated code visible to IntelliJ IDEA
   idea
   `java-library`
 }
 
-java {
-  sourceCompatibility = JavaVersion.VERSION_17
-}
+java { sourceCompatibility = JavaVersion.VERSION_17 }
 
-repositories {
-  mavenCentral()
-}
+repositories { mavenCentral() }
 
-dependencies {
-  implementation("org.pkl-lang:pkl-config-java:0.30.0")
-}
+dependencies { implementation("org.pkl-lang:pkl-config-java:0.31.0") }
 
 // Register a code generator named "configClasses".
 // This adds a task with the same name.
@@ -49,17 +56,14 @@ pkl {
   }
 }
 
-tasks.check {
-  dependsOn(tasks.named("testPklConfig"))
-}
+tasks.check { dependsOn(tasks.named("testPklConfig")) }
 
 // Runs this example.
 // This task is specific to this project and not generally required.
-val runExample by tasks.registering(JavaExec::class) {
-  mainClass.set("example.JavaCodeGeneratorExample")
-  classpath = sourceSets.main.get().runtimeClasspath
-}
+val runExample by
+  tasks.registering(JavaExec::class) {
+    mainClass.set("example.JavaCodeGeneratorExample")
+    classpath = sourceSets.main.get().runtimeClasspath
+  }
 
-tasks.check {
-  dependsOn(runExample)
-}
+tasks.check { dependsOn(runExample) }
