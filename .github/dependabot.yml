@@ -1,6 +1,21 @@
 version: 2
 updates:
+- package-ecosystem: gradle
+  directories:
+  - /build-eval
+  - /codegen-java
+  - /codegen-kotlin
+  - /config-java
+  - /config-java-build-time-eval
+  - /config-kotlin
+  - /config-kotlin-build-time-eval
+  - /core
+  - /pkldoc
+  - /
+  schedule: {}
 - package-ecosystem: github-actions
+  cooldown:
+    default-days: 7
   directory: /
   ignore:
   - dependency-name: '*'
