@@ -13,7 +13,7 @@
  */
 plugins {
   // apply the Pkl plugin
-  id("org.pkl-lang") version ("0.31.0")
+  id("org.pkl-lang") version ("0.31.1")
   // if the `idea` plugin is applied, the Pkl plugin makes generated code visible to IntelliJ IDEA
   idea
   `java-library`
@@ -23,7 +23,7 @@ java { sourceCompatibility = JavaVersion.VERSION_17 }
 
 repositories { mavenCentral() }
 
-dependencies { implementation("org.pkl-lang:pkl-config-java:0.31.0") }
+dependencies { implementation("org.pkl-lang:pkl-config-java:0.31.1") }
 
 // Register a code generator named "configClasses".
 // This adds a task with the same name.
