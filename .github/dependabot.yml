@@ -12,7 +12,8 @@ updates:
   - /core
   - /pkldoc
   - /
-  schedule: {}
+  schedule:
+    interval: weekly
 - package-ecosystem: github-actions
   cooldown:
     default-days: 7

@@ -67,6 +67,9 @@ dependabot {
         "/pkldoc"
         "/"
       }
+      schedule {
+        interval = "weekly"
+      }
     }
   }
 }
