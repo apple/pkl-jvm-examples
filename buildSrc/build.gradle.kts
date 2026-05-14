@@ -14,6 +14,6 @@
 plugins { `kotlin-dsl` }
 
 dependencies {
-  implementation("com.diffplug.spotless:spotless-plugin-gradle:6.25.0")
+  implementation("com.diffplug.spotless:spotless-plugin-gradle:8.4.0")
   implementation("org.pkl-lang:pkl-formatter:0.31.0")
 }
