@@ -18,6 +18,25 @@ $ java -cp <classpath-for-pkl-codegen-java> \
     src/main/resources/Birds.pkl
 ----
 
+The CLI jar tool (pkl-codegen-java) has several dependencies to run: pkl-cli-java, kotlin-stdlib and javapoet if you do not already have these dependencies (or pkl-codegen-java.jar) you can download the respective jars at the following urls:
+
+* https://search.maven.org/remote_content?g=com.squareup&a=javapoet&v=RELEASE
+* https://search.maven.org/remote_content?g=org.jetbrains.kotlin&a=kotlin-stdlib&v=RELEASE
+* https://search.maven.org/remote_content?g=org.pkl-lang&a=pkl-cli-java&v=LATEST
+* https://search.maven.org/remote_content?g=org.pkl-lang&a=pkl-codegen-java&v=LATEST
+
+Then you can call the tool with the downloaded jars (either remove the versions from the filenames on download or change the below to include the versions)
+
+[source,shell script]
+----
+$ java -cp "javapoet.jar;kotlin-stdlib.jar;pkl-cli-java.jar;pkl-codegen-java.jar" org.pkl.codegen.java.Main \
+    -o generated \
+    src/main/resources/Birds.pkl
+----
+
+You will likely need the --allowed-modules whitelisting depending on the pkl location, also added to the command.  Make sure to see the https://github.com/apple/pkl/WINDOWS.adoc[WINDOWS.adoc] if you are on Windows for additional tips.
+
+
 NOTE: xref:build.gradle.kts[] demonstrates how to generate code with the Gradle plugin.
 
 The following Java code is generated:
