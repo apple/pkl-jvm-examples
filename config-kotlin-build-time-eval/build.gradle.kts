@@ -16,7 +16,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   // apply the Pkl plugin
-  id("org.pkl-lang") version ("0.31.0")
+  id("org.pkl-lang") version ("0.31.1")
   idea
   kotlin("jvm")
 }
@@ -32,8 +32,8 @@ repositories { mavenCentral() }
 
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.10")
-  implementation("org.pkl-lang:pkl-config-kotlin:0.31.0")
-  implementation("org.pkl-lang:pkl-config-java-all:0.31.0")
+  implementation("org.pkl-lang:pkl-config-kotlin:0.31.1")
+  implementation("org.pkl-lang:pkl-config-java-all:0.31.1")
 }
 
 // Generate a resource named "data.msgpack" by evaluating data.pkl
