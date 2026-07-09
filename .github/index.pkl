@@ -68,7 +68,20 @@ dependabot {
         "/"
       }
       schedule {
-        interval = "weekly"
+        interval = "quarterly"
+      }
+      cooldown {
+        `default-days` = 7
+        exclude {
+          "org.pkl-lang"
+        }
+      }
+      groups {
+        ["pkl"] {
+          patterns { "org.pkl-lang"; "org.pkl-lang:*" }
+          `group-by` = "dependency-name"
+        }
+        ["all"] { `group-by` = "dependency-name" }
       }
     }
   }
