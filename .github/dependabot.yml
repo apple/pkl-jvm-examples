@@ -1,6 +1,10 @@
 version: 2
 updates:
 - package-ecosystem: gradle
+  cooldown:
+    default-days: 7
+    exclude:
+    - org.pkl-lang
   directories:
   - /build-eval
   - /codegen-java
@@ -12,8 +16,16 @@ updates:
   - /core
   - /pkldoc
   - /
+  groups:
+    pkl:
+      patterns:
+      - org.pkl-lang
+      - org.pkl-lang:*
+      group-by: dependency-name
+    all:
+      group-by: dependency-name
   schedule:
-    interval: weekly
+    interval: quarterly
 - package-ecosystem: github-actions
   cooldown:
     default-days: 7
