@@ -13,7 +13,7 @@
  */
 plugins {
   // apply the Pkl plugin
-  id("org.pkl-lang") version ("0.31.0")
+  id("org.pkl-lang") version ("0.32.1")
   idea
   `java-library`
 }
@@ -22,7 +22,7 @@ java { sourceCompatibility = JavaVersion.VERSION_17 }
 
 repositories { mavenCentral() }
 
-dependencies { implementation("org.pkl-lang:pkl-config-java-all:0.31.0") }
+dependencies { implementation("org.pkl-lang:pkl-config-java-all:0.32.1") }
 
 // Generate a resource named "data.msgpack" by evaluating data.pkl
 pkl {

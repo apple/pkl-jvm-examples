@@ -20,7 +20,7 @@ java { sourceCompatibility = JavaVersion.VERSION_17 }
 
 repositories { mavenCentral() }
 
-dependencies { implementation("org.pkl-lang:pkl-config-java-all:0.31.0") }
+dependencies { implementation("org.pkl-lang:pkl-config-java-all:0.32.1") }
 
 // Runs this example.
 // This task is specific to this project and not generally required.
